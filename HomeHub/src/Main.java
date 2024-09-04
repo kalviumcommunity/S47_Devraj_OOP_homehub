@@ -3,10 +3,9 @@ import Lighting.Lighting;
 import Thermostate.Thermostat;
 import SecuritySystem.SecuritySystem;
 
-// Main class to run the simulation
 public class Main {
     public static void main(String[] args) {
-        // Create the HomeHub instance
+        // Create an instance of HomeHub
         HomeHub hub = new HomeHub();
 
         // Create instances of different devices
@@ -15,12 +14,14 @@ public class Main {
         SecuritySystem homeSecurity = new SecuritySystem("Home Security");
 
         // Add devices to the HomeHub
-        hub.addDevice(livingRoomLight);
-        hub.addDevice(homeThermostat);
-        hub.addDevice(homeSecurity);
+        hub.addLightingDevice(livingRoomLight);
+        hub.addThermostatDevice(homeThermostat);
+        hub.addSecurityDevice(homeSecurity);
 
-        // Control all devices and display energy consumption
+        // Control all devices
         hub.controlDevices();
+
+        // Display the total energy consumption
         hub.displayEnergyConsumption();
     }
 }

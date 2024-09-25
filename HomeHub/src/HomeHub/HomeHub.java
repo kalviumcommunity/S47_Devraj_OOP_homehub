@@ -50,6 +50,11 @@ public class HomeHub {
         totalDevices++; // Increment static variable when a device is added
     }
 
+    // Static method to set global energy limit using the EnergyManager
+    public static void setEnergyLimit(double limit) {
+        EnergyManager.setGlobalEnergyLimit(limit);
+    }
+
     // Method to control and operate all devices
     public void controlDevices() {
         // Operate each Lighting device
@@ -97,4 +102,9 @@ public class HomeHub {
             securitySystem.turnOff();
         }
     }
+
 }
+
+// setEnergyLimit(double limit):
+// A static function that allows us to set a global energy limit for the entire //
+// system using the EnergyManager class. //

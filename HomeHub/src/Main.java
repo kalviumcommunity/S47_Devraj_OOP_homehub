@@ -5,6 +5,10 @@ import SecuritySystem.SecuritySystem;
 
 public class Main {
     public static void main(String[] args) {
+
+        // Set a global energy limit for all devices
+        HomeHub.setEnergyLimit(5000.0); // Static function call
+
         // Create an instance of HomeHub
         HomeHub hub = new HomeHub();
 
@@ -28,3 +32,10 @@ public class Main {
         hub.displayEnergyConsumption();
     }
 }
+
+// Static Member Function (setEnergyLimit) in HomeHub:
+
+// The method setEnergyLimit in the HomeHub class is static and is used
+// configure a system-wide energy consumption limit.
+// The energy limit is set through a call to EnergyManager.setGlobalEnergyLimit,
+// a static function in EnergyManager.

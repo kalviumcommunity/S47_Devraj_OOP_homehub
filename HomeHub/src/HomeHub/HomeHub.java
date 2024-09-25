@@ -15,7 +15,11 @@ public class HomeHub {
     private List<SecuritySystem> securityDevices; // List to store SecuritySystem devices
     private EnergyManager energyManager; // Object to manage energy consumption
 
+    // Static variable to track the total number of devices added to the HomeHub
+    private static int totalDevices = 0; // Shared among all instances of HomeHub
+
     // Constructor to initialize the HomeHub
+
     public HomeHub() {
         this.lightingDevices = new ArrayList<>();
         this.thermostatDevices = new ArrayList<>();
@@ -23,19 +27,27 @@ public class HomeHub {
         this.energyManager = new EnergyManager();
     }
 
+    // Static method to retrieve the total number of devices
+    public static int getTotalDevices() {
+        return totalDevices;
+    }
+
     // Method to add a Lighting device to the HomeHub
     public void addLightingDevice(Lighting lighting) {
         lightingDevices.add(lighting);
+        totalDevices++; // Increment static variable when a device is added
     }
 
     // Method to add a Thermostat device to the HomeHub
     public void addThermostatDevice(Thermostat thermostat) {
         thermostatDevices.add(thermostat);
+        totalDevices++; // Increment static variable when a device is added
     }
 
     // Method to add a SecuritySystem device to the HomeHub
     public void addSecurityDevice(SecuritySystem securitySystem) {
         securityDevices.add(securitySystem);
+        totalDevices++; // Increment static variable when a device is added
     }
 
     // Method to control and operate all devices

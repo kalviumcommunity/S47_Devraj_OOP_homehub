@@ -21,7 +21,10 @@ public class Main {
         // Control all devices
         hub.controlDevices();
 
-        // Display the total energy consumption
+        // Display the total number of devices added using the static method
+        System.out.println("Total devices in the HomeHub: " + HomeHub.getTotalDevices());
+        // Display the total energy
+        // consumption
         hub.displayEnergyConsumption();
     }
 }

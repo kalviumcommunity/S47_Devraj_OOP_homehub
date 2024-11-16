@@ -8,7 +8,7 @@ public class Lighting extends Device {
     public Lighting(String name) {
         super(name);
         this.brightness = 100;
-    } // Inheritance: Calls the constructor of the superclass Device
+    }
 
     public int getBrightness() {
         return brightness;
@@ -19,7 +19,7 @@ public class Lighting extends Device {
     }
 
     @Override
-    public void operate() {
+    public void operate() { // Polymorphism: Overriding the abstract method
         if (isOn()) {
             System.out.println(getDeviceName() + " is operating at brightness " + brightness + "%");
         } else {

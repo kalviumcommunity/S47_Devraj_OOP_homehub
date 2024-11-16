@@ -8,7 +8,7 @@ public class SecuritySystem extends Device {
     public SecuritySystem(String name) {
         super(name);
         this.alarmArmed = false;
-    } // Inheritance: Calls the constructor of the superclass Device
+    }
 
     public boolean isAlarmArmed() {
         return alarmArmed;
@@ -23,7 +23,7 @@ public class SecuritySystem extends Device {
     }
 
     @Override
-    public void operate() {
+    public void operate() { // Polymorphism: Overriding the abstract method
         if (isOn()) {
             System.out.println(getDeviceName() + " is " + (alarmArmed ? "armed" : "disarmed"));
         } else {

@@ -8,7 +8,7 @@ public class Thermostat extends Device {
     public Thermostat(String name) {
         super(name);
         this.temperature = 22;
-    } // Inheritance: Calls the constructor of the superclass Device
+    }
 
     public int getTemperature() {
         return temperature;
@@ -19,7 +19,7 @@ public class Thermostat extends Device {
     }
 
     @Override
-    public void operate() {
+    public void operate() { // Polymorphism: Overriding the abstract method
         if (isOn()) {
             System.out.println(getDeviceName() + " is set to " + temperature + "°C");
         } else {

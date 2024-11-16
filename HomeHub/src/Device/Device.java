@@ -41,5 +41,5 @@ public abstract class Device {
         this.isOn = false;
     }
 
-    public abstract void operate();
+    public abstract void operate(); // Polymorphism: Abstract method to be overridden by subclasses
 }

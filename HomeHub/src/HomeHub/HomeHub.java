@@ -20,7 +20,7 @@ public class HomeHub {
         this.thermostatDevices = new ArrayList<>();
         this.securityDevices = new ArrayList<>();
         this.energyManager = new EnergyManager();
-    } // Constructor: Initializes the HomeHub with empty device lists and an EnergyManager
+    }
 
     public static int getTotalDevices() {
         return totalDevices;

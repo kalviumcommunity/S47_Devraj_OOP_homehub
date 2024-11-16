@@ -9,13 +9,13 @@ public abstract class Device {
         this.deviceName = name;
         this.isOn = false;
         deviceCount++;
-    } // Constructor: Initializes the device with a name and sets it to off
+    }
 
     @Override
     protected void finalize() throws Throwable {
         deviceCount--;
         super.finalize();
-    } // Destructor: Decrements the device count when the object is garbage collected
+    }
 
     public static int getTotalDeviceCount() {
         return deviceCount;

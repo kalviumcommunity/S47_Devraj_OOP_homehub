@@ -8,7 +8,7 @@ public class Lighting extends Device {
     public Lighting(String name) {
         super(name);
         this.brightness = 100;
-    } // Constructor: Initializes the lighting with a name and default brightness
+    } // Inheritance: Calls the constructor of the superclass Device
 
     public int getBrightness() {
         return brightness;

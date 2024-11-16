@@ -8,7 +8,7 @@ public class Thermostat extends Device {
     public Thermostat(String name) {
         super(name);
         this.temperature = 22;
-    } // Constructor: Initializes the thermostat with a name and default temperature
+    } // Inheritance: Calls the constructor of the superclass Device
 
     public int getTemperature() {
         return temperature;

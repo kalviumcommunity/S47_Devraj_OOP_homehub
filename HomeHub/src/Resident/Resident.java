@@ -1,23 +1,27 @@
 package Resident;
 
-// Class to represent a resident of the smart home
 public class Resident {
-    private String name; // Name of the resident
-    private String routine; // Daily routine of the resident
+    private String name; // Encapsulation: private field
+    private String routine; // Encapsulation: private field
 
-    // Constructor to initialize the resident with a name and routine
     public Resident(String name, String routine) {
         this.name = name;
         this.routine = routine;
     }
 
-    // Method to set the resident's routine
-    public void setRoutine(String routine) {
-        this.routine = routine;
+    public String getName() { // Encapsulation: getter method
+        return name;
     }
 
-    // Method to get the resident's routine
-    public String getRoutine() {
+    public void setName(String name) { // Encapsulation: setter method
+        this.name = name;
+    }
+
+    public String getRoutine() { // Encapsulation: getter method
         return routine;
+    }
+
+    public void setRoutine(String routine) { // Encapsulation: setter method
+        this.routine = routine;
     }
 }

@@ -1,6 +1,6 @@
 package Device;
 
-public abstract class Device {
+public abstract class Device { // Abstract class: Device
     private String deviceName;
     private boolean isOn;
     private static int deviceCount = 0;
@@ -41,5 +41,5 @@ public abstract class Device {
         this.isOn = false;
     }
 
-    public abstract void operate(); // Polymorphism: Abstract method to be overridden by subclasses
+    public abstract void operate(); // Virtual function: Abstract method to be overridden by subclasses
 }

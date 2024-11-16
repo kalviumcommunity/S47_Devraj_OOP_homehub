@@ -17,7 +17,7 @@ public class Main {
         hub.addThermostatDevice(homeThermostat);
         hub.addSecurityDevice(homeSecurity);
 
-        hub.controlDevices(); // Polymorphism: Devices are controlled through the common interface
+        hub.controlDevices(); // Devices are controlled through the common interface
 
         System.out.println("Total devices in the HomeHub: " + HomeHub.getTotalDevices());
         hub.displayEnergyConsumption();

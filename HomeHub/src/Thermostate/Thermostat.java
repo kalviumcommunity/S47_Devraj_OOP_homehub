@@ -19,7 +19,7 @@ public class Thermostat extends Device {
     }
 
     @Override
-    public void operate() { // Polymorphism: Overriding the abstract method
+    public void operate() { // Overriding the abstract method
         if (isOn()) {
             System.out.println(getDeviceName() + " is set to " + temperature + "°C");
         } else {

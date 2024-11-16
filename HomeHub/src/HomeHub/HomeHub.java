@@ -48,17 +48,17 @@ public class HomeHub {
     public void controlDevices() {
         for (Lighting lighting : lightingDevices) {
             lighting.turnOn();
-            lighting.operate(); // Polymorphism: Calling the overridden method
+            lighting.operate(); // Calling the overridden method
         }
 
         for (Thermostat thermostat : thermostatDevices) {
             thermostat.turnOn();
-            thermostat.operate(); // Polymorphism: Calling the overridden method
+            thermostat.operate(); // Calling the overridden method
         }
 
         for (SecuritySystem securitySystem : securityDevices) {
             securitySystem.turnOn();
-            securitySystem.operate(); // Polymorphism: Calling the overridden method
+            securitySystem.operate(); // Calling the overridden method
         }
     }
 

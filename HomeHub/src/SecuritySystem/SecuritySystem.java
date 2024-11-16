@@ -8,7 +8,7 @@ public class SecuritySystem extends Device {
     public SecuritySystem(String name) {
         super(name);
         this.alarmArmed = false;
-    }
+    } // Constructor: Initializes the security system with a name and default alarm state
 
     public boolean isAlarmArmed() {
         return alarmArmed;
@@ -23,7 +23,7 @@ public class SecuritySystem extends Device {
     }
 
     @Override
-    public void operate() { // Abstraction: implementation of the abstract method
+    public void operate() {
         if (isOn()) {
             System.out.println(getDeviceName() + " is " + (alarmArmed ? "armed" : "disarmed"));
         } else {

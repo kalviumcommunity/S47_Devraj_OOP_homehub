@@ -8,7 +8,7 @@ public class SecuritySystem extends Device {
     public SecuritySystem(String name) {
         super(name);
         this.alarmArmed = false;
-    } // Constructor: Initializes the security system with a name and default alarm state
+    } // Inheritance: Calls the constructor of the superclass Device
 
     public boolean isAlarmArmed() {
         return alarmArmed;

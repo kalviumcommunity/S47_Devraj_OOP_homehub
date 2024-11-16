@@ -7,7 +7,7 @@ public class Resident {
     public Resident(String name, String routine) {
         this.name = name;
         this.routine = routine;
-    } // Constructor: Initializes the resident with a name and routine
+    }
 
     public String getName() {
         return name;

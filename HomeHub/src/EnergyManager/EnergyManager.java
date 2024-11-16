@@ -6,7 +6,7 @@ public class EnergyManager {
 
     public EnergyManager() {
         this.totalConsumption = 0;
-    } // Constructor: Initializes the EnergyManager with zero total consumption
+    }
 
     public void addConsumption(double consumption) {
         this.totalConsumption += consumption;

@@ -8,7 +8,7 @@ public class Lighting extends Device {
     public Lighting(String name) {
         super(name);
         this.brightness = 100;
-    }
+    } // Constructor: Initializes the lighting with a name and default brightness
 
     public int getBrightness() {
         return brightness;
@@ -19,7 +19,7 @@ public class Lighting extends Device {
     }
 
     @Override
-    public void operate() { // Abstraction: implementation of the abstract method
+    public void operate() {
         if (isOn()) {
             System.out.println(getDeviceName() + " is operating at brightness " + brightness + "%");
         } else {

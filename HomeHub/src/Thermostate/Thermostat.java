@@ -8,7 +8,7 @@ public class Thermostat extends Device {
     public Thermostat(String name) {
         super(name);
         this.temperature = 22;
-    }
+    } // Constructor: Initializes the thermostat with a name and default temperature
 
     public int getTemperature() {
         return temperature;
@@ -19,7 +19,7 @@ public class Thermostat extends Device {
     }
 
     @Override
-    public void operate() { // Abstraction: implementation of the abstract method
+    public void operate() {
         if (isOn()) {
             System.out.println(getDeviceName() + " is set to " + temperature + "°C");
         } else {

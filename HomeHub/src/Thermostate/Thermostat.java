@@ -2,28 +2,28 @@ package Thermostate;
 
 import Device.Device;
 
-// Derived class representing a thermostat for temperature control
 public class Thermostat extends Device {
-    private int temperature; // Temperature setting
+    private int temperature; // Encapsulation: private field
 
-    // Constructor to initialize the thermostat with a name
     public Thermostat(String name) {
         super(name);
-        this.temperature = 22; // Default temperature in Celsius
+        this.temperature = 22;
     }
 
-    // Method to set the temperature
-    public void setTemperature(int temp) {
+    public int getTemperature() { // Encapsulation: getter method
+        return temperature;
+    }
+
+    public void setTemperature(int temp) { // Encapsulation: setter method
         this.temperature = temp;
     }
 
-    // Overridden method to operate the thermostat
     @Override
     public void operate() {
-        if (isOn) {
-            System.out.println(deviceName + " is set to " + temperature + "°C");
+        if (isOn()) {
+            System.out.println(getDeviceName() + " is set to " + temperature + "°C");
         } else {
-            System.out.println(deviceName + " is off.");
+            System.out.println(getDeviceName() + " is off.");
         }
     }
 }

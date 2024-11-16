@@ -1,33 +1,39 @@
 package Device;
 
-// Abstract class representing a generic device
 public abstract class Device {
-    protected String deviceName; // Name of the device
-    protected boolean isOn; // State of the device (on or off)
-    private static int deviceCount = 0; // Static variable to count the number of devices
+    private String deviceName; // Encapsulation: private field
+    private boolean isOn; // Encapsulation: private field
+    private static int deviceCount = 0;
 
-    // Constructor to initialize the device with a name
     public Device(String name) {
         this.deviceName = name;
         this.isOn = false;
         deviceCount++;
     }
 
-    // Static method to get the total count of devices
     public static int getTotalDeviceCount() {
         return deviceCount;
     }
 
-    // Method to turn on the device
+    public String getDeviceName() { // Encapsulation: getter method
+        return deviceName;
+    }
+
+    public void setDeviceName(String deviceName) { // Encapsulation: setter method
+        this.deviceName = deviceName;
+    }
+
+    public boolean isOn() { // Encapsulation: getter method
+        return isOn;
+    }
+
     public void turnOn() {
         this.isOn = true;
     }
 
-    // Method to turn off the device
     public void turnOff() {
         this.isOn = false;
     }
 
-    // Abstract method that must be implemented by derived classes
     public abstract void operate();
 }

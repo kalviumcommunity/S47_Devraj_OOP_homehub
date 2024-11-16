@@ -1,7 +1,7 @@
 package EnergyManager;
 
 public class EnergyManager {
-    private double totalConsumption; // Encapsulation: private field
+    private double totalConsumption;
     private static double globalEnergyLimit = 10000.0;
 
     public EnergyManager() {
@@ -12,7 +12,7 @@ public class EnergyManager {
         this.totalConsumption += consumption;
     }
 
-    public double getTotalConsumption() { // Encapsulation: getter method
+    public double getTotalConsumption() {
         return this.totalConsumption;
     }
 
@@ -25,7 +25,7 @@ public class EnergyManager {
         System.out.println("Global energy limit set to: " + globalEnergyLimit + " watts");
     }
 
-    public static double getGlobalEnergyLimit() { // Encapsulation: getter method
+    public static double getGlobalEnergyLimit() {
         return globalEnergyLimit;
     }
 }

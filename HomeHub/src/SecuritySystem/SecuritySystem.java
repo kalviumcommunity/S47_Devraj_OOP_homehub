@@ -3,14 +3,14 @@ package SecuritySystem;
 import Device.Device;
 
 public class SecuritySystem extends Device {
-    private boolean alarmArmed; // Encapsulation: private field
+    private boolean alarmArmed;
 
     public SecuritySystem(String name) {
         super(name);
         this.alarmArmed = false;
     }
 
-    public boolean isAlarmArmed() { // Encapsulation: getter method
+    public boolean isAlarmArmed() {
         return alarmArmed;
     }
 
@@ -23,7 +23,7 @@ public class SecuritySystem extends Device {
     }
 
     @Override
-    public void operate() {
+    public void operate() { // Abstraction: implementation of the abstract method
         if (isOn()) {
             System.out.println(getDeviceName() + " is " + (alarmArmed ? "armed" : "disarmed"));
         } else {

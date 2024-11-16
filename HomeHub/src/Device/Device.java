@@ -1,8 +1,8 @@
 package Device;
 
 public abstract class Device {
-    private String deviceName; // Encapsulation: private field
-    private boolean isOn; // Encapsulation: private field
+    private String deviceName;
+    private boolean isOn;
     private static int deviceCount = 0;
 
     public Device(String name) {
@@ -15,15 +15,15 @@ public abstract class Device {
         return deviceCount;
     }
 
-    public String getDeviceName() { // Encapsulation: getter method
+    public String getDeviceName() {
         return deviceName;
     }
 
-    public void setDeviceName(String deviceName) { // Encapsulation: setter method
+    public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
 
-    public boolean isOn() { // Encapsulation: getter method
+    public boolean isOn() {
         return isOn;
     }
 
@@ -35,5 +35,5 @@ public abstract class Device {
         this.isOn = false;
     }
 
-    public abstract void operate();
+    public abstract void operate(); // Abstraction: abstract method to be implemented by subclasses
 }

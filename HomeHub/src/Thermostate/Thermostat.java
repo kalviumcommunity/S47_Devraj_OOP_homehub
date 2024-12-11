@@ -1,29 +1,16 @@
-package Thermostate;
+package Thermostat;
 
-import Device.Device;
+import Device.EnergyConsumingDevice;
 
-public class Thermostat extends Device {
-    private int temperature;
-
-    public Thermostat(String name) {
-        super(name);
-        this.temperature = 22;
-    }
-
-    public int getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(int temp) {
-        this.temperature = temp;
+// Thermostat now extends EnergyConsumingDevice to include power tracking
+public class Thermostat extends EnergyConsumingDevice {
+    public Thermostat(String name, double powerConsumption) {
+        super(name, powerConsumption); // Initialize with name and energy usage
     }
 
     @Override
-    public void operate() { // Overriding the abstract method
-        if (isOn()) {
-            System.out.println(getDeviceName() + " is set to " + temperature + "°C");
-        } else {
-            System.out.println(getDeviceName() + " is off.");
-        }
+    public void operate() {
+        System.out.println(this.deviceName + " is regulating temperature and consuming " +
+                this.powerConsumption + " watts."); // Indicate energy consumption
     }
 }

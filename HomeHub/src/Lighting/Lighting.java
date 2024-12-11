@@ -1,29 +1,16 @@
 package Lighting;
 
-import Device.Device;
+import Device.EnergyConsumingDevice;
 
-public class Lighting extends Device {
-    private int brightness;
-
-    public Lighting(String name) {
-        super(name);
-        this.brightness = 100;
-    }
-
-    public int getBrightness() {
-        return brightness;
-    }
-
-    public void setBrightness(int level) {
-        this.brightness = level;
+// Lighting now extends EnergyConsumingDevice to reflect energy usage
+public class Lighting extends EnergyConsumingDevice {
+    public Lighting(String name, double powerConsumption) {
+        super(name, powerConsumption); // Pass power consumption to superclass
     }
 
     @Override
-    public void operate() { // Overriding the abstract method
-        if (isOn()) {
-            System.out.println(getDeviceName() + " is operating at brightness " + brightness + "%");
-        } else {
-            System.out.println(getDeviceName() + " is off.");
-        }
+    public void operate() {
+        System.out.println(this.deviceName + " is providing light and consuming " +
+                this.powerConsumption + " watts."); // Indicate energy consumption
     }
 }

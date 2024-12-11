@@ -17,9 +17,9 @@ public class Main {
         hub.addThermostatDevice(homeThermostat);
         hub.addSecurityDevice(homeSecurity);
 
-        hub.controlDevices(); // Devices are controlled through the common interface
+        hub.controlDevices();
 
-        System.out.println("Total devices in the HomeHub: " + HomeHub.getTotalDevices());
+        System.out.println("Total devices in the HomeHub: " + Device.getTotalDeviceCount());
         hub.displayEnergyConsumption();
     }
 }

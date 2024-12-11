@@ -2,6 +2,7 @@ import HomeHub.HomeHub;
 import Lighting.Lighting;
 import Thermostate.Thermostat;
 import SecuritySystem.SecuritySystem;
+import SecurityDevice.SecurityDevice; // Added import for new SecurityDevice class
 
 public class Main {
     public static void main(String[] args) {
@@ -11,11 +12,11 @@ public class Main {
 
         Lighting livingRoomLight = new Lighting("Living Room Light");
         Thermostat homeThermostat = new Thermostat("Home Thermostat");
-        SecuritySystem homeSecurity = new SecuritySystem("Home Security");
+        SecurityDevice homeSecurity = new SecurityDevice("Home Security"); // Added SecurityDevice instance
 
         hub.addLightingDevice(livingRoomLight);
         hub.addThermostatDevice(homeThermostat);
-        hub.addSecurityDevice(homeSecurity);
+        hub.addDevice(homeSecurity); // Added SecurityDevice to the hub
 
         hub.controlDevices();
 

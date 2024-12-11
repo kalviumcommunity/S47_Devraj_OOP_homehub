@@ -8,18 +8,23 @@ import SecuritySystem.SecuritySystem;
 import java.util.ArrayList;
 import java.util.List;
 
+//Added DeviceManager to handel SRP
+import Utility.DeviceManager;
+
 public class HomeHub {
     private List<Lighting> lightingDevices;
     private List<Thermostat> thermostatDevices;
     private List<SecuritySystem> securityDevices;
     private EnergyManager energyManager;
     private static int totalDevices = 0;
+    private DeviceManager deviceManager; // Added DeviceManager
 
     public HomeHub() {
         this.lightingDevices = new ArrayList<>();
         this.thermostatDevices = new ArrayList<>();
         this.securityDevices = new ArrayList<>();
         this.energyManager = new EnergyManager();
+        this.deviceManager = new DeviceManager(); // Instantiate DeviceManager
     }
 
     public static int getTotalDevices() {
@@ -27,8 +32,7 @@ public class HomeHub {
     }
 
     public void addLightingDevice(Lighting lighting) {
-        lightingDevices.add(lighting);
-        totalDevices++;
+        deviceManager.addDevice(lighting); // Moved responsibility to DeviceManager
     }
 
     public void addThermostatDevice(Thermostat thermostat) {
@@ -46,20 +50,7 @@ public class HomeHub {
     }
 
     public void controlDevices() {
-        for (Lighting lighting : lightingDevices) {
-            lighting.turnOn();
-            lighting.operate(); // Calling the overridden method
-        }
-
-        for (Thermostat thermostat : thermostatDevices) {
-            thermostat.turnOn();
-            thermostat.operate(); // Calling the overridden method
-        }
-
-        for (SecuritySystem securitySystem : securityDevices) {
-            securitySystem.turnOn();
-            securitySystem.operate(); // Calling the overridden method
-        }
+        deviceManager.controlAllDevices(); //Delegated control logic to DeviceManager
     }
 
     public void displayEnergyConsumption() {
@@ -69,17 +60,6 @@ public class HomeHub {
 
     public void resetSystem() {
         energyManager.resetConsumption();
-
-        for (Lighting lighting : lightingDevices) {
-            lighting.turnOff();
-        }
-
-        for (Thermostat thermostat : thermostatDevices) {
-            thermostat.turnOff();
-        }
-
-        for (SecuritySystem securitySystem : securityDevices) {
-            securitySystem.turnOff();
-        }
+        deviceManager.resetAllDevices(); //Delegated reset logic to DeviceManager
     }
 }
